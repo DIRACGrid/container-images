@@ -22,7 +22,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        image-name: ["secret-generation"]
+        image-name: ["secret-generation", "certificates-generation"]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
