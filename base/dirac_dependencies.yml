@@ -28,6 +28,7 @@ dependencies:
   - pyparsing
   - python-gfal2
   - pytz
+  - tzlocal
   - rucio-clients >=34.4.2
   - sqlalchemy
   - authlib
