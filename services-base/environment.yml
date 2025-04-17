@@ -26,3 +26,4 @@ dependencies:
   - opentelemetry-instrumentation-fastapi
   - opentelemetry-instrumentation-logging
   - opentelemetry-sdk
+  - uuid-utils
