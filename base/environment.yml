@@ -13,6 +13,7 @@ dependencies:
   - git
   - gitpython
   - httpx
+  - joserfc
   - pip
   - pydantic >=2
   - pydantic-settings

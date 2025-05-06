@@ -4,12 +4,13 @@ channels:
   - conda-forge
   - nodefaults
 dependencies:
-  - authlib
   - aiomysql
   - aiosqlite
+  - authlib
   - email-validator
   - fastapi
   - isodate
+  - joserfc
   - opensearch-py
   - pyjwt
   - coverage
