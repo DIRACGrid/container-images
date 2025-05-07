@@ -11,6 +11,7 @@ channels:
   - nodefaults
 dependencies:
   - aiobotocore >=2.12
+  - authlib
   - boto3
   - botocore
   - cwltool
@@ -19,6 +20,7 @@ dependencies:
   - dominate
   - fts3
   - importlib-metadata
+  - joserfc
   - m2crypto >=0.38.0
   - packaging
   - pexpect
@@ -30,7 +32,6 @@ dependencies:
   - pytz
   - rucio-clients >=34.4.2
   - sqlalchemy
-  - authlib
   - pyjwt
   # For diracx-client
   - azure-core
