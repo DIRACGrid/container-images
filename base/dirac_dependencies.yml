@@ -11,7 +11,6 @@ channels:
   - nodefaults
 dependencies:
   - aiobotocore >=2.12
-  - authlib
   - boto3
   - botocore
   - cwltool
