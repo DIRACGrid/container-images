@@ -6,6 +6,7 @@ channels:
 dependencies:
   - aiomysql
   - aiosqlite
+  - authlib
   - email-validator
   - fastapi
   - isodate
