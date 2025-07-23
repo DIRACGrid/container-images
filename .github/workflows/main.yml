@@ -91,6 +91,21 @@ jobs:
           mkdir output-services-base
           tar -C output-services-base -xf output-services-base.tar
 
+      - name: Build lhcbdiracx-services-base
+        uses: docker/build-push-action@v6
+        with:
+          context: lhcbdiracx-services-base
+          build-contexts: |
+            ghcr.io/diracgrid/diracx/services-base=oci-layout://output-base@${{steps.build_base.outputs.digest}}
+          outputs: type=oci,dest=output-lhcbdiracx-services-base.tar
+          tags: registry.cern.ch/lhcbdiracx/lhcbdiracx-services-base:latest
+          platforms: linux/amd64,linux/arm64
+
+      - name: Extract lhcbdiracx-services-base
+        run: |
+          mkdir output-lhcbdiracx-services-base
+          tar -C output-lhcbdiracx-services-base -xf output-lhcbdiracx-services-base.tar
+
       - name: Build client-base
         uses: docker/build-push-action@v6
         with:
@@ -118,5 +133,10 @@ jobs:
 
           for image_name in base services-base client-base; do
             image_repo=ghcr.io/diracgrid/diracx/${image_name}
+            oras cp --from-oci-layout "$PWD/output-${image_name}:latest" "${image_repo}:latest,${image_version}"
+          done
+
+          for image_name in lhcbdiracx-services-base; do
+            image_repo=registry.cern.ch/lhcbdiracx/${image_name}
             oras cp --from-oci-layout "$PWD/output-${image_name}:latest" "${image_repo}:latest,${image_version}"
           done

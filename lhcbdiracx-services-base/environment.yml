@@ -1,0 +1,7 @@
+name: diracx
+channels:
+  - diracgrid
+  - conda-forge
+  - nodefaults
+dependencies:
+  - oracle-instant-client
