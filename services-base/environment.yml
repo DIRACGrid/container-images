@@ -28,3 +28,4 @@ dependencies:
   - opentelemetry-instrumentation-logging
   - opentelemetry-sdk
   - uuid-utils
+  - python-dateutil
