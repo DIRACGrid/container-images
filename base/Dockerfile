@@ -1,14 +1,14 @@
 FROM mambaorg/micromamba:latest
 
 # Copying in ENTRYPOINT script and environment specification
-COPY --chown=$MAMBA_USER:$MAMBA_USER environment.yml dirac_dependencies.yml /tmp/
+COPY --chown=$MAMBA_USER:$MAMBA_USER environment.yml diraccommon_dependencies.yml /tmp/
 COPY --chown=$MAMBA_USER:$MAMBA_USER entrypoint.sh /
 RUN chmod 755 /entrypoint.sh
 
 RUN micromamba install --freeze-installed --yes --file /tmp/environment.yml  --name=base && \
-    micromamba install --freeze-installed --yes --file /tmp/dirac_dependencies.yml --name=base && \
+    micromamba install --freeze-installed --yes --file /tmp/diraccommon_dependencies.yml --name=base && \
     micromamba clean --all --yes --force-pkgs-dirs && \
-    rm -rf /tmp/environment.yml /tmp/dirac_dependencies.yml
+    rm -rf /tmp/environment.yml /tmp/diraccommon_dependencies.yml
 
 ARG MAMBA_DOCKERFILE_ACTIVATE=1
 

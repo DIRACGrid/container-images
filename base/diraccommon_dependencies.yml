@@ -6,35 +6,9 @@
 
 name: diracx
 channels:
-  - diracgrid
   - conda-forge
   - nodefaults
 dependencies:
-  - aiobotocore >=2.12
-  - authlib
-  - boto3
-  - botocore
-  - cwltool
-  - db12
+  - typing-extensions >=4.0.0
   - diraccfg
-  - dominate
-  - fts3
-  - importlib-metadata
-  - joserfc
-  - m2crypto >=0.38.0
-  - packaging
-  - pexpect
-  - prompt-toolkit
-  - psutil
-  - pyasn1-modules
-  - pyparsing
-  - python-gfal2
-  - pytz
-  - rucio-clients >=34.4.2
-  - sqlalchemy
-  - pyjwt
-  # For diracx-client
-  - azure-core
-  - isodate
-  - requests
-  - xattr
+  - pydantic >=2.0.0
