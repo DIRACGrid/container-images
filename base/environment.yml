@@ -5,6 +5,8 @@ channels:
   - nodefaults
 dependencies:
   - authlib
+  - aiobotocore
+  - botocore
   - cachetools
   # Needed because coverage runs inside the image
   # when doing the integration tests
@@ -19,7 +21,9 @@ dependencies:
   - pydantic-settings
   - python =3.11
   - pyyaml
+  - pyjwt
   - requests
   - urllib3 <2
   - sh
   - tini
+  - zstandard
