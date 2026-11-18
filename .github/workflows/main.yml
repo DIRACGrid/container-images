@@ -26,6 +26,9 @@ jobs:
   build:
     name: build (${{ matrix.image-name }})
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write  # push the image to ghcr.io
     timeout-minutes:  30
     strategy:
       fail-fast: false
